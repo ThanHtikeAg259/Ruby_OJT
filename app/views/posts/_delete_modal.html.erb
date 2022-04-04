@@ -1,0 +1,22 @@
+<style>
+  .f-17 {
+    font-size: 17px;
+  }
+</style>
+<h3>Are you sure to delete post?</h3>
+<dl class="row f-17">
+  <dt class="col-sm-6">ID</dt>
+  <dd class="col-sm-6"><%= post.id %></dd>
+  <dt class="col-sm-6">Title</dt>
+  <dd class="col-sm-6"><%= post.title %></dd>
+  <dt class="col-sm-6">Description</dt>
+  <dd class="col-sm-6"><%= post.description %></dd>
+  <dt class="col-sm-6">Status</dt>
+  <dd class="col-sm-6">
+    <% if post.status == 0 %>
+    Inactive
+    <% elsif post.status == 1 %>
+    Active
+    <% end %>
+  </dd>
+</dl>

@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  status: 1
+  create_user_id: 1
+  updated_user_id: 1
+  deleted_user_id: 1
+  created_at: 2022-03-21 16:21:02
+  updated_at: 2022-03-21 16:21:02
+  deleted_at: 2022-03-21 16:21:02
+
+two:
+  title: MyString
+  description: MyString
+  status: 1
+  create_user_id: 1
+  updated_user_id: 1
+  deleted_user_id: 1
+  created_at: 2022-03-21 16:21:02
+  updated_at: 2022-03-21 16:21:02
+  deleted_at: 2022-03-21 16:21:02

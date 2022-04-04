@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-6">
+      <%= form_with(model: @user, local: true) do |form| %>
+      <div class="form-group">
+        <%= form.label :Name %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :'E-mail address' %>
+        <%= form.text_area :email, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :Password %>
+        <%= form.password_field :password, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :'Password confirmation' %>
+        <%= form.password_field :passwordConfirmation, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :Type %>
+        <%= form.text_field :type, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :Phone %>
+        <%= form.text_field :phone, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :'Date of birth' %>
+        <%= form.text_field :dob, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :Address %>
+        <%= form.text_field :address, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= form.label :Profile %>
+        <%= form.text_field :profile, class: 'form-control' %>
+      </div>
+      <div class="form-group d-inline">
+        <%= form.submit "Confirm", class: 'btn btn-primary' %>
+      </div>
+      <div class="form-group d-inline">
+      <%= button_tag t('buttons.cancel'), type: "submit", 
+        name: "cancel", value: true, class: 'btn btn-secondary' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

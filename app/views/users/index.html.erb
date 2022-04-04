@@ -1,0 +1,94 @@
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="main-content">
+        <h3>User List</h3>
+        <%= form_tag(search_path, :method => "get", class: "row mb-2 ms-5") do %>
+        <div class="col-md-2">
+          <%= search_field_tag :search, params[:search], class: "form-control", placeholder: "Name" %>
+        </div>
+        <div class="col-md-2">
+          <%= search_field_tag :search, params[:search], class: "form-control", placeholder: "Email" %>
+        </div>
+
+        <div class="col-md-3 row">
+          <label class="col-form-label col-md-3">From:</label>
+          <div class="col-md-8">
+            <%= date_field_tag :start_date, params[:search], class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="col-md-3 row">
+          <label class="col-form-label col-md-2">To:</label>
+          <div class="col-md-8">
+            <%= date_field_tag :end_date, params[:search], class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="col-md-2 row">
+          <%= button_tag "Search", class: "btn btn-success" %>
+        </div>
+        <% end %>
+        <div class="scrollme">
+          <table id="user-table" class="table table-responsive my-tab display nowrap" style="width:100%">
+            <thead class="thead-custom">
+              <tr>
+                <th class="col-w">No</th>
+                <th class="col-w">Name</th>
+                <th class="col-w">Email</th>
+                <th class="col-w">Created User</th>
+                <th class="col-w">Type</th>
+                <th class="col-w">Phone</th>
+                <th class="col-w">Date of Birth</th>
+                <th class="col-w">Address</th>
+                <th class="col-w">Created_date</th>
+                <th class="col-w">Updated_date</th>
+                <th class="col-w">Operation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% index = 1 %>
+              <% @user.each do |user| %>
+              <tr>
+                <td class="col-w mycol"> <%= index %> </td>
+                <td class="col-w"> <%= user.name %> </td>
+                <td class="col-w"> <%= user.email %> </td>
+                <td class="col-w"> <%= user.create_user_id %> </td>
+                <td class="col-w">
+                  <%  if user.type == '0' %>
+                  Admin
+                  <% elsif user.type == '1' %>
+                  User
+                  <% end %>
+                </td>
+                <td class="col-w"> <%= user.phone %> </td>
+                <td class="col-w"> <%= user.dob.strftime('%F').gsub('-', '/') %> </td>
+                <td class="col-w"> <%= user.address %> </td>
+                <td class="col-w"> <%= user.created_at.strftime('%F').gsub('-', '/') %> </td>
+                <td class="col-w"> <%= user.updated_at.strftime('%F').gsub('-', '/') %> </td>
+                <td class="col-w">
+                  edit
+                </td>
+              </tr>
+              <% index += 1 %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#user-table').DataTable({
+      "pagingType": "simple_numbers",
+      "pageLength": 5,
+      "ordering": false,
+      "info": false,
+      "lengthChange": false,
+      "bFilter": false,
+      "scrollX": true
+    })
+  });
+</script>

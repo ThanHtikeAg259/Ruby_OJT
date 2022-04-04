@@ -1,0 +1,22 @@
+  <dl class="row">
+    <dt class="col-sm-6">Title</dt>
+    <dd class="col-sm-6"><%= post.title %></dd>
+    <dt class="col-sm-6">Description</dt>
+    <dd class="col-sm-6"><%= post.description %></dd>
+    <dt class="col-sm-6">Status</dt>
+    <dd class="col-sm-6">
+      <% if post.status == 0 %>
+        Inactive
+      <% elsif post.status == 1 %>
+        Active
+      <% end %>
+    </dd>
+    <dt class="col-sm-6">Created Date</dt>
+    <dd class="col-sm-6"><%= post.created_at.strftime('%F').gsub('-', '/') %></dd>
+    <dt class="col-sm-6">Created User</dt>
+    <dd class="col-sm-6"><%= post.c_name %></dd>
+    <dt class="col-sm-6">Updated Date</dt>
+    <dd class="col-sm-6"><%= post.updated_at.strftime('%F').gsub('-', '/') %></dd>
+    <dt class="col-sm-6">Updated User</dt>
+    <dd class="col-sm-6"><%= post.u_name %></dd>
+  </dl>

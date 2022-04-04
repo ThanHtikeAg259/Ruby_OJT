@@ -1,0 +1,12 @@
+User.create(name: "Lucy", 
+    email: "Lucy@pm.me  ", 
+    password_digest: BCrypt::Password.create('lucy123'), 
+    profile: "lucy.jpg", 
+    type: "1",
+    phone: "09789456123", 
+    address: "Canada", 
+    dob: "2001-08-08", 
+    create_user_id: 4, 
+    updated_user_id: 4,
+    created_at: DateTime.now, 
+    updated_at: DateTime.now)

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="main-content w-75">
+      <h3>Create Post</h3>
+      <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <%= form_with scope: :post, url: "/posts/confirm", local: true do |form| %>
+          <div class="form-group row mb-4">
+            <%= form.label :title, class: 'col-md-4 col-form-label' %>
+            <div class="col-md-8">
+              <%= form.text_field :title, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="form-group row mb-4">
+            <%= form.label :description, class: 'col-md-4 col-form-label' %>
+            <div class="col-md-8">
+              <%= form.text_area :description, class: 'form-control text-area' %>
+            </div>
+          </div>
+
+          <div class="form-group row mb-4">
+            <div class="col-md-4"></div>
+            <div class="col-md-2 me-2">
+              <%= form.submit "Create", class: 'btn btn-success' %>
+            </div>
+            <div class="col-md-2">
+              <%= submit_tag("Clear", { :name => 'reset', :id => 'reset_button', :type => "reset", :class => 'btn btn-secondary'}) %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
